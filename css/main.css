@@ -1,0 +1,37 @@
+ body {
+            font-family: "Montserrat";
+            font-size: 16px;
+            background: url("../tweed.png");
+            width: 95%;
+            margin: 1% auto;
+        }
+
+        .cell, .news {
+          padding:0;
+          text-align: center;
+            height: 100px;
+            background-color: #BBB;
+            margin: .5%;
+            border: 5px solid #BBB;
+            border-radius: 10px;
+            -webkit-transition: background-color 0.2s ease-in-out;
+            -moz-transition: background-color 0.2s ease-in-out;
+            -o-transition: background-color 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out;
+            -webkit-transition: border 0.2s ease-in-out;
+            -moz-transition: border 0.2s ease-in-out;
+            -o-transition: border 0.2s ease-in-out;
+            transition: border 0.2s ease-in-out;
+        }.news{
+          background-color:#84ff00;
+          border: 5px solid #08cf00;
+        }
+
+            .cell:hover {
+                border: 5px solid #08cf00;
+            }
+
+        .selected {
+            background-color: #84ff00;
+            border: 5px solid #08cf00;
+        }
