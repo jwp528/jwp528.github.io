@@ -47,24 +47,3 @@
         .hidden{
            visibility:hidden;
         }
-        
-@media only screen and (max-device-width: 500px){
-           body, html{
-             max-width:300px;
-           }
-           
-           .header img{
-             width:200px;
-             height:auto;
-           }
-           
-           #bingo_table{
-                      width:100%;
-           }
-           
-           .cell, .news{
-                      width:50px;
-                      height:50px;
-           }
-           
-}
