@@ -47,3 +47,18 @@
         .hidden{
            visibility:hidden;
         }
+        
+@media only screen and (max-device-width: 800px){
+           body, html{
+             max-width:300px;
+           }
+           
+           .header img{
+             width:50%;
+           }
+           
+           #bingo_table{
+                      width:100%;
+           }
+           
+}
