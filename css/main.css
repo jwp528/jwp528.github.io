@@ -62,4 +62,9 @@
                       width:100%;
            }
            
+           .cell{
+                      width:100px;
+                      height:100px;
+           }
+           
 }
