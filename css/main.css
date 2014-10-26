@@ -54,7 +54,8 @@
            }
            
            .header img{
-             width:50%;
+             width:200px;
+             height:auto;
            }
            
            #bingo_table{
