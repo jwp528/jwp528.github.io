@@ -2,7 +2,6 @@
             font-family: "Montserrat";
             font-size: 16px;
             background: url("../tweed.png");
-            width: 95%;
             margin: 1% auto;
         }
         
@@ -43,4 +42,8 @@
         .selected {
             background-color: #84ff00;
             border: 5px solid #08cf00;
+        }
+        
+        .hidden{
+           visibility:hidden;
         }
