@@ -2,7 +2,8 @@
             font-family: "Montserrat";
             font-size: 16px;
             background: url("../tweed.png");
-            margin: 1% auto;
+            margin: 0;
+            padding:0;
         }
         
         #bingo_table{
@@ -12,6 +13,14 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width:100%;
+    margin: 0 auto;
+    padding:0;
+        }
+        
+        .header img{
+           margin:0;
+           padding:0;
         }
 
         .cell, .news {
@@ -46,4 +55,14 @@
         
         .hidden{
            visibility:hidden;
+        }
+        
+        .heading{
+           text-align: center;
+           width:17.5%;
+           color:#000;
+        }
+        
+        .heading h1{
+           font-size:72px;
         }
