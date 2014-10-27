@@ -4,6 +4,7 @@
             background: url("../tweed.png");
             margin: 0;
             padding:0;
+            overflow-x:hidden;
         }
         
         #bingo_table{
@@ -19,6 +20,10 @@
         }
         
         .header img{
+           float:left;
+           position:absolute;
+           top:0;
+           left:0;
            width:300px;
            margin:0;
            padding:0;
