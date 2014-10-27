@@ -60,13 +60,6 @@ function bingo_start() {
     "\"Anyone wanna tell him why he's wrong?\""
   );
   
-  var selements = "";
-  var childCount = 25;
-  elements = shuffle(elements);
-  for(var i = 0; i < elements.length; ++i){
-    selements += elements[i] + "<br/>";
-  }
-  
   $(".cell").each(function(){
     $(this).text(elements.shift());
   });

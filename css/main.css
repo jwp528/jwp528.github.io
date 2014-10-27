@@ -30,6 +30,7 @@
         }
 
         .cell, .news {
+           height:auto;
           padding:0;
           text-align: center;
             height: 100px;
