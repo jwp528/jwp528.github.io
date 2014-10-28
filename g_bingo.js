@@ -2,7 +2,6 @@ $(document).ready(function(){
   bingo_start();
 });
 
-
 function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
@@ -59,6 +58,8 @@ function bingo_start() {
     "Cargo Shorts",
     "\"Anyone wanna tell him why he's wrong?\""
   );
+  
+  elements = shuffle(elements);
   
   $(".cell").each(function(){
     $(this).text(elements.shift());
