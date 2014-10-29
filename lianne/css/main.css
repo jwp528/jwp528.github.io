@@ -30,7 +30,9 @@
         }
 
         .cell, .news {
-					 width:140px;
+					 font-size: 14px;
+					 width:130px;
+					 word-wrap: normal;
            height:auto;
           padding:0;
           text-align: center;
