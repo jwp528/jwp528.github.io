@@ -83,3 +83,13 @@ html, body{
 	padding:0;
 	margin:5px;
 }
+
+.project a{
+	border:none;
+	text-decoration:none;
+}
+
+.project p{
+	font-size: 18px;
+	color:#000;
+}
