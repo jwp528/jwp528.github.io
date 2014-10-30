@@ -31,10 +31,10 @@ function shuffle(array) {
 }
 
 function bingo_start() {
-  
+
   var elements = new Array(
     "Roman Roads",
-    "Halo 4",
+    "Halo",
     "Canary",
     "Apple Security",
     "Radio Waves",
@@ -42,25 +42,24 @@ function bingo_start() {
     "Chocolate Milk Ice Cap",
     "Coke",
     "Half life t-shirt",
-    "Blizzard t-shirt",
+    "Overhead",
     "Western Work",
     "Why Java is shit",
     "Why Google is shit",
     "Linux in C++",
-    "Hungarian Notation",
-    "\"Do it\"",
+    "Philosophers",
     "\"Questions\"",
-    "C++ Primer",
+    "Greek Stories",
     "\"Ideas\"",
     "Strauslup",
-    "Microsoft Word",
+    "Microsoft",
     "I know a guy",
-    "Cargo Shorts",
+    "Cargo Shorts/Pants",
     "\"Anyone wanna tell him why he's wrong?\""
   );
-  
+
   elements = shuffle(elements);
-  
+
   $(".cell").each(function(){
     $(this).text(elements.shift());
   });
@@ -82,7 +81,7 @@ function evaluateRow() {
     clear_board();
     bingo_start();
   }//end if
-  
+
   if ($("#g2").hasClass("selected") && $("#a2").hasClass("selected") && $("#r2").hasClass("selected") && $("#t2").hasClass("selected") && $("#h2").hasClass("selected")){
     document.getElementById("win").play();
     alert("g2, a2, r2, t2, h2 - That's a line!\n\tGARTH!");
@@ -90,7 +89,7 @@ function evaluateRow() {
     clear_board();
     bingo_start();
   }
-    
+
   if ($("#g3").hasClass("selected") && $("#a3").hasClass("selected") && $("#r3").hasClass("selected") && $("#t3").hasClass("selected") && $("#h3").hasClass("selected")){
     document.getElementById("win").play();
     alert("g3, a3, r3, t3, h3 - That's a line!\n\tGARTH!");
@@ -98,7 +97,7 @@ function evaluateRow() {
     clear_board();
     bingo_start();
   }
-    
+
   if ($("#g4").hasClass("selected") && $("#a4").hasClass("selected") && $("#r4").hasClass("selected") && $("#t4").hasClass("selected") && $("#h4").hasClass("selected")){
     document.getElementById("win").play();
     alert("g4, a4, r4, t4, h4 - That's a line!\n\tGARTH!");
@@ -106,7 +105,7 @@ function evaluateRow() {
     clear_board();
     bingo_start();
   }
-    
+
   if ($("#g5").hasClass("selected") && $("#a5").hasClass("selected") && $("#r5").hasClass("selected") && $("#t5").hasClass("selected") && $("#h5").hasClass("selected")){
     document.getElementById("win").play();
     alert("g5, a5, r5, t5, h5 - That's a line!\n\tGARTH!");
@@ -124,7 +123,7 @@ function evaluateCol() {
     clear_board();
     bingo_start();
   }//end if
-    
+
   if ($("#a1").hasClass("selected") && $("#a2").hasClass("selected") && $("#a3").hasClass("selected") && $("#a4").hasClass("selected") && $("#a5").hasClass("selected")){
     document.getElementById("win").play();
     alert("a1, a2, a3, a4, a5 - That's a column!\n\tGARTH!");
@@ -132,7 +131,7 @@ function evaluateCol() {
     clear_board();
     bingo_start();
   }//end if
-    
+
   if ($("#r1").hasClass("selected") && $("#r2").hasClass("selected") && $("#r3").hasClass("selected") && $("#r4").hasClass("selected") && $("#r5").hasClass("selected")){
     document.getElementById("win").play();
     alert("r1, r2, r3, r4, r5 - That's a column!\n\tGARTH!");
@@ -140,7 +139,7 @@ function evaluateCol() {
     clear_board();
     bingo_start();
   }//end if
-  
+
   if ($("#t1").hasClass("selected") && $("#t2").hasClass("selected") && $("#t3").hasClass("selected") && $("#t4").hasClass("selected") && $("#t5").hasClass("selected")){
     document.getElementById("win").play();
     alert("t1, t2, t3, t4, t5 - That's a column!\n\tGARTH!");
@@ -148,7 +147,7 @@ function evaluateCol() {
     clear_board();
     bingo_start();
   }//end if
-  
+
   if ($("#h1").hasClass("selected") && $("#h2").hasClass("selected") && $("#h3").hasClass("selected") && $("#h4").hasClass("selected") && $("#h5").hasClass("selected")){
     document.getElementById("win").play();
     alert("h1, h2, h3, h4, h5 - That's a column!\n\tGARTH!");
@@ -166,7 +165,7 @@ function evaluateDiagonal(){
     clear_board();
     bingo_start();
   }//end if
-  
+
   if ($("#g5").hasClass("selected") && $("#a4").hasClass("selected") && $("#r3").hasClass("selected") && $("#t2").hasClass("selected") && $("#h1").hasClass("selected")){
     document.getElementById("win").play();
     alert("g5, a4, r3, t2, h1 - That's a cross!\n\tGARTH!");
