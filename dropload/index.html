@@ -20,16 +20,14 @@
       ];
 
       $(document).ready(function(){
-        $("#dropload").dropload({
-
-        });
+        $("#dropload").dropload({});
 
         $("#ex2").dropload({
-          'initialOptions': initial,
+          'initialOptions'  : initial,
           'secondaryOptions': secondary,
-          'firstOption'  : 'Select an Option',
-          'name'         :  'example',
-          'labelValue'   : "Secondary Select:"
+          'firstOption'     : 'Select a 2nd Option',
+          'name'            : 'example',
+          'labelValue'      : "Secondary Select:"
         });
       });
     </script>
@@ -53,7 +51,7 @@
 &lt;script type="text/javascript" src="js/jquery.dropload.js"&gt; &lt;/script&gt;
 &lt;script type="text/javascript"&gt;
   $(document).ready(function(){
-    $("#dropload").dropload({});
+    $("#MySelectId").dropload({});
   });
 &lt;/script&gt;
         </pre>
@@ -95,6 +93,16 @@
     [["OP3: secondary 1", "sValue 1"]],//choices for option 3
     [["OP4: secondary 1", "sValue 1"],["OP4: secondary 2", "sValue 2"]],//choices for option 4
   ];
+
+  $(document).ready(function(){
+    $$("#mySelectId").dropload({
+          'initialOptions'  : initial,
+          'secondaryOptions': secondary,
+          'firstOption'     : 'Select a 2nd Option',
+          'name'            : 'example',
+          'labelValue'      : 'Secondary Select:'
+        });
+  });
 &lt;/script&gt;
         </pre>
         <h2>Result:</h2>

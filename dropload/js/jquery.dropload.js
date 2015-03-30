@@ -41,7 +41,6 @@
     ["Virginia", "VA"], ["Washington", "WA"], ["West Virginia", "WV"], ["Wisconsin", "WI"], ["Wyoming", "WY"]]
   ];
 
-
   function changeList(id, options){
     $("#"+id).empty();
     var dl_change = document.getElementById(id);
