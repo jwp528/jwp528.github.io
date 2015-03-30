@@ -29,6 +29,12 @@
           'name'            : 'example',
           'labelValue'      : "Secondary Select:"
         });
+
+        $("#ex3").dropload({
+          'secondaryChange' : function(){
+            alert($(this).val());
+          }
+        })
       });
     </script>
 
@@ -119,6 +125,29 @@
         <form action="index.html" method="post">
           <label for="country" class="label">initial Options:</label>
           <select name="country" class="dropdown" id="ex2">
+            <option>Select Option...</option>
+          </select>
+        </form>
+      </div>
+      <h2 class="title">Extend it even further to handle changes from the generated '&lt;select&gt;' tag!</h2>
+      <div class="preview">
+        <p>You can define your own function to handle changes to the generated dropdown. going off the original example.</p>
+        <p>Did you know the values generated from the preset countries are the country/state/province abbreviations? Check it out!</p>
+        <pre>
+          &lt;script type="text/javascript"&gt;
+  $(document).ready(function(){
+    $("#MySelectId").dropload({
+      'secondaryChange' : function(){
+        alert($(this).val());
+      }
+    });
+  });
+&lt;/script&gt;
+        </pre>
+        <h2>Result:</h2>
+        <form action="index.html" method="post">
+          <label for="country" class="label">Select Country:</label>
+          <select name="country" class="dropdown" id="ex3">
             <option>Select Option...</option>
           </select>
         </form>
