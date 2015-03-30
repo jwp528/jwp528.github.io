@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Dropdown Autoloader - Country to State/Province</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dropload.js" ></script>
+    <script type="text/javascript">
+      var initial = [
+        ["option 1", "value 1"],
+        ["option 2", "value 2"],
+        ["option 3", "value 3"],
+        ["option 4", "value 4"],
+      ];
+
+      var secondary = [
+        [["OP1: secondary 1", "sValue 1"],["OP1: secondary 2", "sValue 2"],["OP1: secondary 3", "sValue 3"]],//choices for option 1
+        [["OP2: secondary 1", "sValue 1"],["OP2: secondary 2", "sValue 2"],["OP2: secondary 3", "sValue 3"],["OP2: secondary 4", "sValue 4"]],//choices for option 2
+        [["OP3: secondary 1", "sValue 1"]],//choices for option 3
+        [["OP4: secondary 1", "sValue 1"],["OP4: secondary 2", "sValue 2"]],//choices for option 4
+      ];
+
+      $(document).ready(function(){
+        $("#dropload").dropload({
+
+        });
+
+        $("#ex2").dropload({
+          'initialOptions': initial,
+          'secondaryOptions': secondary,
+          'firstOption'  : 'Select an Option',
+          'name'         :  'example',
+          'labelValue'   : "Secondary Select:"
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#linktogithubrepo">Fork It</a></li>
+    </ul>
+    <div class="head">
+
+    </div>
+    <div class="content">
+      <h1 class="title">Dropload.js is a javascript plugin designed to take the hard work out of select forms</h1>
+      <div class="preview">
+        <p class="caption">You can define your own arrays, or use the presets! (currently the only preset is for Countries):</p>
+        <p>All you need to do is include JQuery, Dropload.js, and then initialize it!</p>
+        <pre>
+&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="js/jquery.dropload.js"&gt; &lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $(document).ready(function(){
+    $("#dropload").dropload({});
+  });
+&lt;/script&gt;
+        </pre>
+        <h2>Result:</h2>
+        <form action="index.html" method="post">
+          <label for="country" class="label">Select Country:</label>
+          <select name="country" class="dropdown" id="dropload">
+            <option>Select Option...</option>
+          </select>
+        </form>
+      </div>
+      <h1 class="title">You can override values by creating multi-dimension arrays and passing them through</h1>
+      <div class="preview">
+        <p class="caption">Simply declare your arrays above your call and set them in your options.</p>
+        <p>Note:  every array element must have a text and value equivalent. meaning 1 option would be an array with 2 elements.</p>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  var initial = [
+        ["option 1", "value 1"],
+        ["option 2", "value 2"],
+        ["option 3", "value 3"],
+        ["option 4", "value 4"],
+      ];
+&lt;/script&gt;
+        </pre>
+        <p>Every value within the initial options array must have a subsequent array for it's options to be generated</p>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  var initial = [
+    ["option 1", "value 1"],
+    ["option 2", "value 2"],
+    ["option 3", "value 3"],
+    ["option 4", "value 4"],
+  ];
+
+  var secondary = [
+    [["OP1: secondary 1", "sValue 1"],["OP1: secondary 2", "sValue 2"],["OP1: secondary 3", "sValue 3"]],//choices for option 1
+    [["OP2: secondary 1", "sValue 1"],["OP2: secondary 2", "sValue 2"],["OP2: secondary 3", "sValue 3"],["OP2: secondary 4", "sValue 4"]],//choices for option 2
+    [["OP3: secondary 1", "sValue 1"]],//choices for option 3
+    [["OP4: secondary 1", "sValue 1"],["OP4: secondary 2", "sValue 2"]],//choices for option 4
+  ];
+&lt;/script&gt;
+        </pre>
+        <h2>Result:</h2>
+        <form action="index.html" method="post">
+          <label for="country" class="label">initial Options:</label>
+          <select name="country" class="dropdown" id="ex2">
+            <option>Select Option...</option>
+          </select>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
