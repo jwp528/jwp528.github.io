@@ -2,10 +2,10 @@ html, body{
 	margin:0;
 	padding:0;
 	background:url("..//witewall.png");
+	line-height: 1.5;
 }
 
 .header{
-	width:100%;
 	margin:0;
 	height:auto;
 	padding:10px;
@@ -19,7 +19,7 @@ html, body{
 	margin:0;
 	padding:0;
 	float:left;
-	font-size:32px;
+	font-size:24px;
 }
 
 .header ul{
@@ -32,16 +32,17 @@ html, body{
 .header ul li{
 	margin:0 15px;
 	padding:0;
-	padding-left:20px;
 	display:inline-block;
-	border-left: solid 2px #333;
 }
 
 .header ul li a{
-	font-size:42px;
+	margin:0;
+	padding:0;
+	font-size:24px;
 	color:#CCC;
 	text-decoration: none;
-	transition: all ease 0.8s;
+	transition: all ease 0.5s;
+	vertical-align: bottom;
 }.header ul li a:hover{
 	color:#FFF;
 	text-decoration: underline;
@@ -51,16 +52,17 @@ html, body{
 	width:80%;
 	height:auto;
 	margin:0 auto;
-	padding:10px;
+	padding:0;
 }
 
 .content{
-	width:100%;
+	margin:0;
 	padding:10px;
+	border:solid 1px #000;
+	background:#FFF;
 }
 .content>div{
 	display:inline-block;
-	margin-right:1%;
 }
 
 .project{
@@ -81,7 +83,7 @@ html, body{
 	font-weight:bold;
 	font-size:36px;
 	padding:0;
-	margin:5px;
+	margin:0;
 }
 
 .project a{

@@ -6,7 +6,7 @@
             padding:0;
             overflow-x:hidden;
         }
-        
+
         #bingo_table{
            -webkit-touch-callout: none;
            -webkit-user-select: none;
@@ -18,7 +18,7 @@
            margin: 0px auto;
            padding:0;
         }
-        
+
         .header img{
            float:left;
            position:absolute;
@@ -59,32 +59,33 @@
             background-color: #84ff00;
             border: 5px solid #08cf00;
         }
-        
+
         .hidden{
            visibility:hidden;
         }
-        
+
         .heading{
            text-align: center;
            width:17.5%;
            color:#000;
         }
-        
+
         .heading h1{
            font-size:96px;
         }
-        
+
         .colhead{
-           float:left;
-           position:absolute;
-           left:-7%;
-           top:-20%;
            margin:0;
            padding:0;
           color:#000;
         }
-        
+
         .colhead h1{
            font-size:96px;
            vertical-align: middle;
+           text-align: center;
+        }
+
+        .col-xs-2{
+           min-width: 110px;
         }
