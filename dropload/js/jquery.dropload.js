@@ -41,6 +41,7 @@
     ["Virginia", "VA"], ["Washington", "WA"], ["West Virginia", "WV"], ["Wisconsin", "WI"], ["Wyoming", "WY"]]
   ];
 
+
   function changeList(id, options){
     $("#"+id).empty();
     var dl_change = document.getElementById(id);
@@ -59,6 +60,7 @@
       firstOption       : "Select a Province/State...",//used as a placeholder when the select field is generated
       name              : "country",
       labelValue        : "Province/State:",//text seen on the label
+      secondaryChange   : null,
       complete          : null
     }, options);
 
@@ -67,34 +69,41 @@
 
     //find the mode
     //split the id selector to grab the element by id
-        var split = id.split("#");
-        var dropload = document.getElementById(split[1]);
+    var split = id.split("#");
+    var dropload = document.getElementById(split[1]);
 
-        //fill the initial text element with the initial text/values
-        for(var i = 0; i < settings.initialOptions.length; ++i){
-          var e = document.createElement("option");
-          e.textContent = settings.initialOptions[i][0];
-          e.value = settings.initialOptions[i][1];
-          dropload.appendChild(e);
-        }//end for
-        $("<label>").attr('for', settings.name).attr('id', 'lbl'+settings.name).attr('class', 'label').html(settings.labelValue).insertAfter(id);
-        $("<br/>").insertBefore("#lbl"+settings.name);
-        $("<select>").attr({
-          name: settings.name,
-          'class' : 'dropdown',
-          id: split[1]+"_choice"
-        }).insertAfter("#lbl"+settings.name);
+    //fill the initial text element with the initial text/values
+    for(var i = 0; i < settings.initialOptions.length; ++i){
+      var e = document.createElement("option");
+      e.textContent = settings.initialOptions[i][0];
+      e.value = settings.initialOptions[i][1];
+      dropload.appendChild(e);
+    }//end for
+    $("<label>").attr('for', settings.name).attr('id', 'lbl'+settings.name).attr('class', 'label').html(settings.labelValue).insertAfter(id);
+    $("<br/>").insertBefore("#lbl"+settings.name);
+    $("<select>").attr({
+      name: settings.name,
+      'class' : 'dropdown',
+      id: split[1]+"_choice"
+    }).insertAfter("#lbl"+settings.name);
 
-        var choice = document.getElementById(split[1]+"_choice");
-        var op = document.createElement("option");
-        op.textContent = settings.firstOption;
-        op.value = "";
-        choice.appendChild(op);
+    var choice = document.getElementById(split[1]+"_choice");
+    var op = document.createElement("option");
+    op.textContent = settings.firstOption;
+    op.value = "";
+    choice.appendChild(op);
 
-        $(id).change(function(){
-          ops = settings.secondaryOptions[($('option:selected',$(this)).index()-1)];
-          changeList(split[1]+"_choice", ops);
-        });
+    $(id).change(function(){
+      ops = settings.secondaryOptions[($('option:selected',$(this)).index()-1)];
+      changeList(split[1]+"_choice", ops);
+    });
+
+    if ($.isFunction(settings.secondaryChange)) {
+      $(id+"_choice").change(function(){
+        settings.secondaryChange.call(this);
+      });
+    }//end if
+
 
     if ($.isFunction(settings.complete)) {
       settings.complete.call(this);
