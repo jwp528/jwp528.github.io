@@ -95,7 +95,16 @@
 
     $(id).change(function(){
       ops = settings.secondaryOptions[($('option:selected',$(this)).index()-1)];
-      changeList(split[1]+"_choice", ops);
+      if(ops instanceof Array)
+        changeList(split[1]+"_choice", ops);
+      else{
+        $(id+"_choice").empty();
+        var choice = document.getElementById(split[1]+"_choice");
+        var op = document.createElement("option");
+        op.textContent = settings.firstOption;
+        op.value = "";
+        choice.appendChild(op);
+      }//end if-else
     });
 
     if ($.isFunction(settings.secondaryChange)) {
