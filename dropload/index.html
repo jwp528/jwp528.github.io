@@ -72,6 +72,15 @@
   });
 &lt;/script&gt;
         </pre>
+        <p>And in the body</p>
+        <pre>
+&lt;form action="index.html" method="post"&gt;
+  &lt;label for="country" &gt;Select Country:&lt;/label&gt;
+    &lt;select name="country" id="MySelectId"&gt;
+    &lt;option&gt;Select Option...&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+        </pre>
         <h2>Result:</h2>
         <form action="index.html" method="post">
           <label for="country" class="label">Select Country:</label>
@@ -112,7 +121,7 @@
   ];
 
   $(document).ready(function(){
-    $$("#mySelectId").dropload({
+    $("#mySelectId").dropload({
           'initialOptions'  : initial,
           'secondaryOptions': secondary,
           'firstOption'     : 'Select a 2nd Option',
