@@ -163,7 +163,7 @@ p{
   text-align: center;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 1080px){
   html, body{
     margin:0;
     padding:0;
