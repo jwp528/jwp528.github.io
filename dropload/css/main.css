@@ -51,7 +51,6 @@ p{
   box-shadow:2px 2px 5px #000;
   background:url('../img/head_bg.png');
   background-attachment: fixed;
-  background-size: 100%;
 }
 
 .head img{
