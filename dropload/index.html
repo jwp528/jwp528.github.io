@@ -34,7 +34,9 @@
         $("#ex3").dropload({
           'name'  : 'ex3',
           'secondaryChange' : function(){
-            alert("you've chosen the province/state: "+$(this).val());
+            str = "Country: " + $("#ex3 option:selected").text() + "("+$("#ex3").val()+")";
+            str += "\nProvince/State: " + $("#"+this.id + ' option:selected').text() + "("+$(this).val()+")";
+            alert(str);
           }
         })
       });
