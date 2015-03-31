@@ -196,7 +196,7 @@ p{
 
   .preview{
     background:#CCC;
-    width:100%;
+    width:auto;
     margin:0;
     padding:10px;
     border:solid 1px #000;
@@ -207,9 +207,5 @@ p{
     visibility:hidden;
   }.head img{
     visibility:hidden;
-  }
-
-  .download{
-    margin-bottom:25px;
   }
 }
