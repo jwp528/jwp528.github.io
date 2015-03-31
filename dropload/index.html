@@ -34,8 +34,16 @@
         $("#ex3").dropload({
           'name'  : 'ex3',
           'secondaryChange' : function(){
+            var country = $("#ex3").val();
             str = "Country: " + $("#ex3 option:selected").text() + "("+$("#ex3").val()+")";
-            str += "\nProvince/State: " + $("#"+this.id + ' option:selected').text() + "("+$(this).val()+")";
+            if (country == "CA") {
+              str += "\nProvince: ";
+            }
+            else if(country == "US"){
+              str += "\nState : ";
+            }
+
+            str += $("#"+this.id + ' option:selected').text() + "("+$(this).val()+")";
             alert(str);
           }
         })
@@ -151,7 +159,17 @@
   $(document).ready(function(){
     $("#MySelectId").dropload({
       'secondaryChange' : function(){
-        alert($(this).val());
+        var country = $("#MySelectId").val();
+        str = "Country: " + $("#MySelectId option:selected").text() + "("+$("#MySelectId").val()+")";
+        if (country == "CA") {
+          str += "\nProvince: ";
+        }
+        else if(country == "US"){
+          str += "\nState : ";
+        }
+
+        str += $("#"+this.id + ' option:selected').text() + "("+$(this).val()+")";
+        alert(str);
       }
     });
   });
