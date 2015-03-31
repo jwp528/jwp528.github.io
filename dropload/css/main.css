@@ -195,7 +195,6 @@ p{
   }
 
   .preview{
-    padding:25px;
     background:#CCC;
     width:100%;
     margin:0;
@@ -208,5 +207,9 @@ p{
     visibility:hidden;
   }.head img{
     visibility:hidden;
+  }
+
+  .download{
+    margin:10px
   }
 }
