@@ -122,3 +122,9 @@
         .col-xs-2{
            min-width: 110px;
         }
+
+@media screen and (max-device-width: 1300px), (max-width: 1300px){
+  body{
+    overflow-x:scroll;
+  }
+}

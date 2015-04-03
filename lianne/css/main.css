@@ -121,3 +121,9 @@ body {
   font-size:96px;
   vertical-align: middle;
 }
+
+@media screen and (max-device-width: 1300px), (max-width: 1300px){
+  body{
+    overflow-x:scroll;
+  }
+}
