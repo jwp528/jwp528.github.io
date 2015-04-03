@@ -207,9 +207,19 @@ p{
   .preview{
     background:#CCC;
     width:auto;
+    padding:0;
     margin:0;
     padding-bottom:20px;
     border:solid 1px #000;
+  }
+
+  .preview p, .preview form, .preview h2, .preview h4{
+    padding:5px;
+  }
+
+  .preview pre{
+    width:auto;
+
   }
 
   .head{
