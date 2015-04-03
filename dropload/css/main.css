@@ -101,6 +101,17 @@ p{
   color:#333;
 }
 
+.preview h4{
+  margin-top:10px;
+  text-align: justify;
+  font-size:28px;
+  color:#333;
+}
+
+#email{
+  color:#000;
+}
+
 .preview pre{
   width: 80%;
   margin:0 auto;
