@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <title>Dropload.js - The dropdown autoloader</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dropload.js" ></script>
+    <script type="text/javascript">
+      var initial = [
+        ["option 1", "value 1"],
+        ["option 2", "value 2"],
+        ["option 3", "value 3"],
+        ["option 4", "value 4"],
+      ];
+
+      var secondary = [
+        [["OP1: secondary 1", "sValue 1"],["OP1: secondary 2", "sValue 2"],["OP1: secondary 3", "sValue 3"]],//choices for option 1
+        [["OP2: secondary 1", "sValue 1"],["OP2: secondary 2", "sValue 2"],["OP2: secondary 3", "sValue 3"],["OP2: secondary 4", "sValue 4"]],//choices for option 2
+        [["OP3: secondary 1", "sValue 1"]],//choices for option 3
+        [["OP4: secondary 1", "sValue 1"],["OP4: secondary 2", "sValue 2"]],//choices for option 4
+      ];
+
+      $(document).ready(function(){
+        $("#dropload").dropload({});
+
+        $("#ex2").dropload({
+          'initialOptions'  : initial,
+          'secondaryOptions': secondary,
+          'firstOption'     : 'Select a 2nd Option',
+          'name'            : 'example',
+          'labelValue'      : "Secondary Select:"
+        });
+
+        $("#ex3").dropload({
+          'name'  : 'ex3',
+          'secondaryChange' : function(){
+            var country = $("#ex3").val();
+            str = "Country: " + $("#ex3 option:selected").text() + "("+$("#ex3").val()+")";
+            if (country == "CA") {
+              str += "\nProvince: ";
+            }
+            else if(country == "US"){
+              str += "\nState : ";
+            }
+
+            str += $("#"+this.id + ' option:selected').text() + "("+$(this).val()+")";
+            alert(str);
+          }
+        })
+      });
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-61317982-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="http://jwp528.github.io">Home</a></li>
+      <li><a href="http://www.github.com/jwp528/dropload">Fork It</a></li>
+    </ul>
+    <div class="head">
+      <img src="img/logo.png" />
+    </div>
+    <div class="content">
+      <h1 class="title">Dropload.js is a free and open source javascript plugin designed to take the hard work out of select forms</h1>
+      <div class="preview">
+        <p>You can define your own arrays, or use the presets! (currently the only preset is for Countries):</p>
+        <p>All you need to do is include JQuery, Dropload.js, and then initialize it!</p>
+        <pre>
+&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="js/jquery.dropload.js"&gt; &lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $(document).ready(function(){
+    $("#MySelectId").dropload({});
+  });
+&lt;/script&gt;
+        </pre>
+        <p>And in the body</p>
+        <pre>
+&lt;form action="index.html" method="post"&gt;
+  &lt;label for="country" &gt;Select Country:&lt;/label&gt;
+    &lt;select name="country" id="MySelectId"&gt;
+    &lt;option&gt;Select Option...&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+        </pre>
+        <h2>Result:</h2>
+        <form action="index.html" method="post">
+          <label for="country" class="label">Select Country:</label>
+          <select name="country" class="dropdown" id="dropload">
+            <option>Select Option...</option>
+          </select>
+        </form>
+      </div>
+      <h1 class="title">You can override values by creating multi-dimension arrays and passing them through</h1>
+      <div class="preview">
+        <p>Simply declare your arrays above your call and set them in your options.</p>
+        <p>Note:  every array element must have a text and value equivalent. meaning 1 option would be an array with 2 elements.</p>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  var initial = [
+        ["option 1", "value 1"],
+        ["option 2", "value 2"],
+        ["option 3", "value 3"],
+        ["option 4", "value 4"],
+      ];
+&lt;/script&gt;
+        </pre>
+        <p>Every value within the initial options array must have a subsequent array for it's options to be generated</p>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  var initial = [
+    ["option 1", "value 1"],
+    ["option 2", "value 2"],
+    ["option 3", "value 3"],
+    ["option 4", "value 4"],
+  ];
+
+  var secondary = [
+    [["OP1: secondary 1", "sValue 1"],["OP1: secondary 2", "sValue 2"],["OP1: secondary 3", "sValue 3"]],//choices for option 1
+    [["OP2: secondary 1", "sValue 1"],["OP2: secondary 2", "sValue 2"],["OP2: secondary 3", "sValue 3"],["OP2: secondary 4", "sValue 4"]],//choices for option 2
+    [["OP3: secondary 1", "sValue 1"]],//choices for option 3
+    [["OP4: secondary 1", "sValue 1"],["OP4: secondary 2", "sValue 2"]],//choices for option 4
+  ];
+
+  $(document).ready(function(){
+    $("#mySelectId").dropload({
+          'initialOptions'  : initial,
+          'secondaryOptions': secondary,
+          'firstOption'     : 'Select a 2nd Option',
+          'name'            : 'example',
+          'labelValue'      : 'Secondary Select:'
+        });
+  });
+&lt;/script&gt;
+        </pre>
+        <h2>Result:</h2>
+        <form action="index.html" method="post">
+          <label for="country" class="label">initial Options:</label>
+          <select name="country" class="dropdown" id="ex2">
+            <option>Select Option...</option>
+          </select>
+        </form>
+      </div>
+      <h2 class="title">Extend it even further to handle changes from the generated '&lt;select&gt;' tag!</h2>
+      <div class="preview">
+        <p>You can define your own function to handle changes to the generated dropdown. going off the original example.</p>
+        <p>Did you know the values generated from the preset countries are the country/state/province abbreviations? Check it out!</p>
+        <pre>
+&lt;script type="text/javascript"&gt;
+  $(document).ready(function(){
+    $("#MySelectId").dropload({
+      'secondaryChange' : function(){
+        var country = $("#MySelectId").val();
+        str = "Country: " + $("#MySelectId option:selected").text() + "("+$("#MySelectId").val()+")";
+        if (country == "CA") {
+          str += "\nProvince: ";
+        }
+        else if(country == "US"){
+          str += "\nState : ";
+        }
+
+        str += $("#"+this.id + ' option:selected').text() + "("+$(this).val()+")";
+        alert(str);
+      }
+    });
+  });
+&lt;/script&gt;
+        </pre>
+        <h2>Result:</h2>
+        <form action="index.html" method="post">
+          <label for="country" class="label">Select Country:</label>
+          <select name="country" class="dropdown" id="ex3">
+            <option>Select Option...</option>
+          </select>
+        </form>
+        <h2 class="title">So what are you waiting for! get started with dropload today!</h2>
+        <a class="download" href="http://www.github.com/jwp528/dropload">Download</a>
+
+        <h4>Have any questions or feedback? find a bug or have a suggestion for future development? please feel free to send me an email about it to <span id="email">joshwp528@gmail.com</span>. Or fork the repo and play around with it. dropload is free and open source to anyone. Any feedback is appreciated.</h4>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer">
+      <h4>Find me on Facebook, Twitter or LinkedIn</h4>
+      <div class="social">
+        <a href="http://www.facebook.com/jwp528" title="Find me on Facebook"><div class="media facebook"></div></a>
+        <a href="https://twitter.com/josh_parsons528" title="tweet me @josh_parsons528"><div class="media twitter"></div></a>
+        <a href="http://ca.linkedin.com/in/jwp528/en" title="Check out my LinkedIn Profile"><div class="media lin"></div></a>
+      </div>
+      <p>Copyright&copy; 2015 jwp528.github.io/dropload :: All Rights Reserved</p>
+      <p>Site By: Josh Parsons</p>
+    </div>
+    </div>
+  </body>
+</html>
