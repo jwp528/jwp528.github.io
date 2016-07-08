@@ -3,6 +3,7 @@ html, body{
     padding:0;
     font-family: "Agency FB";
     background:#f27641;
+    line-height:1.5;
 }
 
 p{
@@ -49,9 +50,18 @@ p{
 .wrap{
     background:rgba(255,255,255,0.5);
     padding:15px;
-}.wrap p{
-    font-size:18px;
-    
+}
+
+.content h1{
+    font-size:48px;
+    text-shadow:1px 1px 5px #0d89be;
+}
+
+.content p, .content ul{
+    font-size:24px;
+    width:90%;
+    text-indent: 30px;
+    margin:10px auto;
 }
 
 .item{
