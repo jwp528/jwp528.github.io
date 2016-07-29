@@ -1,0 +1,480 @@
+body,html{
+	margin:0;
+	padding:0;
+	
+}
+
+.section, .slide{
+	background-size:contain;
+	background-repeat: no-repeat;
+}
+
+/*====START TOP MENU====*/
+.menubar{
+	width:65%;
+	position:absolute;
+	top:20px;
+	left:20%;
+	right:10%;
+	z-index: 11;
+	transition: background ease 0.7s;
+}.menubar img{
+	margin-right:50px;
+}
+
+#menu{
+	float:right;
+	z-index:70;
+	margin:5px 0;
+	padding:0;
+	list-style:none;
+}#menu li{
+	display:inline;
+	margin-right:25px;
+}#menu li a{
+	color:#FFF;
+	font-family: OS_Bold;
+	font-size: 10pt;
+	text-decoration:none;
+	transition: color ease 0.5s;
+}#menu li.active{
+	border-bottom:solid 3px #FFF;
+	transition: border-color ease 0.5s;
+}#menu li a:hover{
+	color:#c2b59b;
+}#menu li.active:hover{
+	border-bottom:solid 3px #c2b59b;
+}#menu li, #menu li a{
+	padding: 10px 0;
+}
+/*====END TOP MENU====*/
+
+/*====START WHITE MENU BAR====*/
+#white_wrap_on{
+	width:100%;
+	height:80px;
+	position:absolute;
+	background:#FFF;
+	overflow: auto;
+	transition:background ease 0.7s;
+	z-index:10;
+}
+
+#menu_white{
+	width:65%;
+	z-index: 11;
+	transition:background ease 0.7s;
+}#menu_white img{
+	margin-right:50px;
+}
+
+
+#menu_white #menu{
+	float:right;
+	z-index:70;
+	margin:5px 0;
+	padding:0;
+	list-style:none;
+}#menu_white #menu li{
+	display:inline;
+	margin-right:25px;
+}#menu_white #menu li a{
+	color:#6b6b6b;
+	font-family: OS_Bold;
+	font-size: 10pt;
+	text-decoration:none;
+	transition: color ease 0.5s;
+}#menu_white #menu li.active{
+	border-bottom:solid 3px #6b6b6b;
+	transition: border-color ease 0.5s;
+}#menu_white #menu li a:hover{
+	color:#3b3b3b;
+}#menu_white #menu li.active:hover{
+	border-bottom:solid 3px #3b3b3b;
+}#menu_white #menu li, #nav_white li a{
+	padding: 10px 0;
+}
+/*====END WHITE MENU BAR====*/
+
+/*====GENERAL STYLINGS====*/
+.sContent{
+	padding:0;
+	height:auto;
+	width:80%;
+	margin:0 auto;
+	text-align: center;
+	height:auto;	
+}.sContent h1{
+	margin:0;
+	padding:0;
+	font-family: oswald_light;
+	color:#FFF;
+	font-size:36pt;
+}.sContent img{
+	float:none;
+	margin-bottom:40px;
+}
+
+.hundo{
+	padding:0;
+	height:auto;
+	width:80%;
+	margin:0 auto;
+	text-align: center;
+	height:100%;	
+}.hundo h1{
+	margin:0;
+	padding:0;
+	font-family: oswald_light;
+	color:#FFF;
+	font-size:36pt;
+}.hundo img{
+	float:none;
+	margin-bottom:40px;
+}
+/*====END GENERAL STYLINGS====*/
+
+/*====SLIDE ORDER BUTTON STYLE====*/
+#order{
+	font-family: oswald_light;
+	font-size:20pt;
+	padding:5px 30px;
+	background:#3d3d3d;
+	border:solid 2px #c2b59b;
+	color: #c2b59b;
+	text-decoration: none;
+	transition: background ease 0.5s;
+}#order:hover{
+	background: #1d1d1d;
+}
+/*====SLIDE GRANOLA BUTTON LEARN MORE STYLE====*/
+#btngran{
+	font-family: oswald_light;
+	font-size:20pt;
+	padding:5px 30px;
+	background:#662d91;
+	border:solid 2px #FFF;
+	color: #FFF;
+	text-decoration: none;
+	transition: background ease 0.5s;
+}#khaja{
+	margin:0;
+	padding:0;
+}
+
+/*====ABOUT MOMOS STYLING====*/
+/*====
+ *THIS PAGE USES THE SAME STYLES AS THE CATERING PAGE,
+ *ALTERING ANYTHING HERE WILL CHANGE THE WAY THE CATERING PAGE LOOKS
+====*/
+.article{
+	width:100%;
+	text-align:justify;
+	background:#FFF;
+	margin:0;
+	padding:0;
+	margin-bottom:3%;
+	clear:both;
+}.article p img{
+	margin:1% 3% 10% 0;
+	padding:0;
+	float:left;
+ }.article .aboutcontenthead{
+	margin:0;
+	padding:0;
+	color:#c2b59b;
+	font-family:OS_Bold;
+	font-size:21pt;
+	vertical-align: text-top;
+}.underhead{
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family:OS_Bold;
+	font-size:14pt;
+}.content{
+	font-family:OS_Regular;
+	font-weight:normal;
+	font-size:14pt;
+	color:#000;
+}
+
+.article_right{
+	background:#FFF;
+	float:left;
+	width:100%;
+	text-align:justify;
+	margin:0;
+	margin-bottom:1%;
+	padding:5px;
+	clear:both;
+}.article_right p img{
+	margin:1% 0 10% 3%;
+	padding:0;
+	float:right;
+}.article_right .aboutcontenthead{
+	margin:0;
+	padding:0;
+	color:#c2b59b;
+	font-family:OS_Bold;
+	font-size:21pt;
+	vertical-align: text-top;
+}
+/*====END ABOUT CONTENT STYLINGS====*/
+
+
+/*====ORDER MENU STYLINGS====*/
+.grid_container{
+	margin:0 0 20% 0;
+	padding:0;
+	width:100%;
+}
+
+.item{
+	height:auto;
+	float:left;
+	display:inline-block;
+	width:30%;
+	margin:0 3% 0 0;
+	padding:0 0 3% 0;
+	background:#FFF;
+}.item img{
+	margin:0;
+	padding:0;
+	max-width: 100%;
+}.item_content{
+	text-align:center;
+	padding:0 3% 3% 3%;
+}.item_content h2{
+	text-align:left;
+	font-family:oswald_bold;
+	font-weight: bold;
+	font-size:20pt;
+	color:#c2b59b;
+	padding:0;
+}#informus{
+	text-align:left;
+	font-family:OS_Regular;
+	font-weight: normal;
+	font-size:14pt;
+	color:#000;
+	padding:0;
+}.item_content .desc{
+	text-align:left;
+	font-family:OS_Regular;
+	font-weight:normal;
+	font-size:14pt;
+	padding:0;
+	margin:0 0 2% 0;
+}.price{
+	text-align:left;
+	font-family: OS_Bold;
+	font-weight:bold;
+	font-size:30pt;
+	color:#372b2b;
+	padding:0;
+	margin:0 0 10% 0;
+}.smaller{
+	font-size:16pt;
+}.ordernow{
+	font-family:oswald_bold;
+	font-weight:bold;
+	font-size:12pt;
+	padding: 10px;
+	background: #bf1818;
+	border:solid 1px #000;
+	color:#FFF;
+	text-decoration:none;
+	transition:background ease 0.7s;
+}.ordernow:hover{
+	background: #fc2828;
+}.informdesc{
+	text-align:left;
+	font-family:OS_Regular;
+	font-weight:normal;
+	font-size:14pt;
+	padding:0;
+	margin:0 0 8% 0;
+}.inform{
+	font-family:oswald_bold;
+	font-weight:bold;
+	font-size:12pt;
+	padding: 10px;
+	background: #488105;
+	border:solid 1px #000;
+	color:#FFF;
+	text-decoration:none;
+	transition:background ease 0.7s;
+}.inform:hover{
+	background:#60ae03;
+}.item:last-child{
+	margin-bottom:5%;
+}
+
+
+.jitem{
+	height:auto;
+	float:left;
+	display:inline-block;
+	width:30%;
+	margin:0 3% 0 0;
+	padding:0 0 3% 0;
+}.jitem img{
+	margin:0;
+	padding:0;
+	max-width: 100%;
+}
+
+#feelgood{
+	font-family:OS_BOLD;
+	font-weight:bold;
+	font-size: 24pt;
+	color:#a3cd39;
+}#juicesbtn{
+	padding:5px 100px 5px 100px;
+	margin-bottom:3%;
+	font-family:oswald_light;
+	font-weight:normal;
+	font-size:20pt;
+	background:#a3cd39;
+	color:#FFF;
+	border:solid 1px #FFF;
+	transition:background ease 0.7s;
+}#juicesbtn:hover{
+	background:#3ba62a;
+}.hidden{
+	height:1px;
+	opacity:0;
+	visibility:hidden;
+	transition: all ease 1s;
+}.show{
+	height:100%;
+	opacity:1;
+	visibility:visible;
+	transition: all ease 1s;
+}
+
+.juice_item{
+	float:left;
+	display:inline-block;
+	width:30%;
+	height:450px;
+	margin:0 2% 0 0;
+	padding:2% 0 2% 1%;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background: url("../../img/backgrounds/gradient_bg.jpg");
+	background-size:100% 100%;
+}.juice_item h1{
+	color:#c2b59b;
+	font-family:oswald_bold;
+	font-weight:bold;
+	font-size: 25pt;
+}.juice_content{
+	margin:0;
+	padding:0;
+	font-family:OS_Regular;
+	font-weight: normal;
+	font-size:14pt;
+}.juice_ib{
+	font-weight:bold;
+	font-style:italic;
+}.juice_item:last-child{
+	margin-bottom:3%;
+}
+/*====END ORDER MENU STYLINGS====*/
+
+/*====CATERING STYLING====*/
+/*====THIS PAGE USES THE SAME STYLES AS THE ABOUT PAGE, SEE ABOUT STYLING FOR DETAILS====*/
+#catercontact{
+	font-family:oswald_light;
+	font-weight:normal;
+	font-size:20pt;
+	background:#c2b59b;
+	padding:5px 5%;
+	color:#3d3d3d;
+	border:solid 2px #3d3d3d;
+	text-decoration:none;
+	transition:all ease 0.7s;
+}#catercontact:hover{
+	background:#3d3d3d;
+	color:#c2b59b;
+	border:solid 2px #c2b59b;
+}.contact_warn{
+	font-family:oswald_bold;
+	font-weight:bold;
+	font-size:14pt;
+	font-style:italic;
+}#choosecatering{
+	margin:0;
+	padding:0;
+	clear:both;
+	font-family:OS_Bold;
+	font-weight:bold;
+	font-size:24pt;
+	color:#6b6b6b;
+}.cateringarticle{
+	margin-bottom:0;
+}.cateringarticle img{
+	margin-bottom:0;
+}
+/*====END CATERING STYLING*/
+
+
+/*====SECTION HEADER COLORS====*/
+#cuisine_slide{
+	color:#c2b59b;
+	font-weight:normal;
+}
+
+#abouthead{
+	color:#6b6b6b;
+	font-family:oswald_light;
+	font-size: 60pt;
+	font-weight: normal;
+}
+
+#menuhead{
+	color:#FFF;
+	font-family: oswald_light;
+	font-weight:normal;
+	font-size:60pt;
+}
+
+#menusubhead{
+	margin:0;
+	color:#c2b59b;
+	font-family:OS_Bold;
+	font-weight: bold;
+	font-size:18pt;
+}#menusubheadwhite{
+	margin:0;
+	color:#FFF;
+	font-family: OS_Bold;
+	font-weight:bold;
+	font-size:18pt;
+	margin-bottom:5%;
+}
+
+#cateringhead{
+	color:#6b6b6b;
+	font-family:oswald_light;
+	font-size: 60pt;
+	font-weight: normal;
+}
+
+/*SECTION SPECIFICS (TAG BY ID ONLY!)*/
+
+#pabout{
+	height:auto;
+	overflow:auto;
+}#pcatering{
+	height:auto;
+	overflow:auto;
+}
+
+#pordermenu{
+	background-size: cover;
+	height:100%;
+	overflow:auto;
+}

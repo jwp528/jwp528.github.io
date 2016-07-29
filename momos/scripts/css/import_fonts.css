@@ -1,0 +1,40 @@
+/**
+ *CSS FILE USED TO IMPORT FONT TYPES ONLY
+ *
+ *NOTES
+ *-Menu items: OS_BOLD 12pt
+ *-Section headers: oswald_light 48, 60, 
+ *-Place order button: oswald_light 20
+ *-About momos section text: oswald_bold 21
+ */
+
+
+/*OPEN SANS REGULAR*/
+@font-face{
+	font-family: OS_Regular;
+	src: url(../../fonts/OpenSans_Regular.ttf);
+}
+
+/*OPEN SANS BOLD*/
+@font-face{
+	font-family: OS_Bold;
+	src: url(../../fonts/OpenSans_Bold.ttf);
+}
+
+/*OSWALD REGULAR*/
+@font-face{
+	font-family: oswald;
+	src: url(../../fonts/Oswald_Regular.ttf);
+}
+
+/*OSWALD BOLD*/
+@font-face{
+	font-family: oswald_bold;
+	src: url(../../fonts/Oswald_Bold.ttf);
+}
+
+/*OSWALD LIGHT*/
+@font-face{
+	font-family: oswald_light;
+	src: url(../../fonts/Oswald_Light.ttf);
+}

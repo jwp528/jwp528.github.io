@@ -1,0 +1,710 @@
+<!--
+
+-->
+
+<html>
+	<head>
+		<title>Momo's at the Market</title>
+		<link rel="stylesheet" type="text/css" href="scripts/css/import_fonts.css" />
+		<link rel="stylesheet" type="text/css" href="scripts/fullpage.js/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="scripts/css/main.css" />
+
+		<!--last script section-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Used to allow the plugin option `scrollOverflow:true` -->
+		<script type="text/javascript" src="scripts/fullpage.js/scrolloverflow.min.js"></script>
+
+		<script type="text/javascript" src="scripts/fullpage.js/jquery.fullPage.min.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#fullpage').fullpage({
+					'verticalCentered': false,
+					anchors: ['home', 'about', 'ordermenu', 'catering', 'granola', 'reviews', 'contact'],
+					scrollingSpeed: 1000,
+					controlArrows: false,
+					slidesNavigation: true,
+					navigation: false,
+					menu: '#menu',
+					scrollOverflow:true,
+					onLeave: function(index, nextIndex){
+			    	//if index == 1, fade from normal menu to white bar menu
+						if(index == 1){
+							//fade menu to white bar
+						  $("#logo").attr("src", "img/graphics/logo_neg.png");
+							$(".menubar").attr("id", "menu_white");
+							$("#white_wrap_off").attr("id", "white_wrap_on");
+						}//end if
+						if(index > 1 && nextIndex == 1){
+							//fade white bar to menu
+							$("#logo").attr("src", "img/graphics/logo.png");
+							$(".menubar").attr("id", "menu_top");
+							$("#white_wrap_on").attr("id", "white_wrap_off");
+						}//end if
+			    },
+					afterLoad: function(){
+			    	setTimeout(slideRight, 5000);
+						
+			    },
+					onSlideLeave: function(){
+						setTimeout(slideRight, 5000);
+					}
+				});
+			});
+			
+			function slideRight(){
+				$.fn.fullpage.moveSlideRight();
+			}
+			
+			
+			function showJuices(){
+				if($("#juice_container").hasClass("hidden")){
+					$("#juice_container").removeClass("hidden");
+					$("#juice_container").addClass("show");
+				}else{
+					$("#juice_container").removeClass("show");
+					$("#juice_container").addClass("hidden");
+				}
+				
+			}//end showJuices
+		</script>
+		<!--STYLINGS FOR FULL PAGE BACKGROUNDS AND SLIDES -->
+		<style type="text/css">
+			#slide1{
+				background-image: url("img/graphics/slides/slide1.jpg");
+				padding:4% 0 0 0;
+				overflow:auto;
+			}
+			
+			#slide2{
+				background-image: url("img/graphics/slides/slide2.jpg");
+				padding:4% 0 0 0;
+			}
+			
+			#slide3{
+				background-image: url("img/graphics/slides/slide3.jpg");
+				padding:4% 0 0 0;
+			}
+			
+			#slide4{
+				background-image: url("img/graphics/slides/slide4.jpg");
+				padding:2% 0 0 0;
+			}
+			
+			#pabout{
+				background-image: url("img/backgrounds/flags.png");
+				padding:4% 0 0 0;
+			}
+			
+			#pordermenu{
+				background-image: url("img/backgrounds/menu_bg.jpg");
+				padding:4% 0 0 0;
+			}
+			
+			#pcatering{
+				background-image: url("img/backgrounds/flags.png");
+				padding:4% 0 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="white_wrap_off">
+			<div class="menubar" id="menu_top">
+				<img id="logo" src="img/graphics/logo.png" />
+				<ul id="menu">
+					<li data-menuanchor="home" class="active"><a href="#home">HOME</a></li>
+					<li data-menuanchor="about"><a href="#about">ABOUT MOMOS</a></li>
+					<li data-menuanchor="ordermenu"><a href="#ordermenu">MENU</a></li>
+					<li data-menuanchor="catering"><a href="#catering">CATERING</a></li>
+					<li data-menuanchor="granola"><a href="#granola">KHAJA GRANOLA</a></li>
+					<li data-menuanchor="reviews"><a href="#reviews">REVIEWS</a></li>
+					<li data-menuanchor="contact"><a href="#contact">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--===============================
+		================ HOME ==============
+		===============================-->
+		<div id="fullpage">
+			<div class="section">
+				<div class="slide" id="slide1">
+					<div class="hundo">
+						<h1 id="cuisine_slide">Incredible Nepalese Cuisine</h1>
+						<img src="img/graphics/flags.png" /><br/>
+						<a href="#contact" id="order">PLACE AN ORDER</a>
+					</div>
+				</div>
+				<div class="slide" id="slide2">
+					<div class="hundo">
+						<h1 id="cuisine_slide">Healthy & Refreshing Beverage Choices</h1>
+						<img src="img/graphics/flags.png" /><br/>
+						<a href="#contact" id="order">PLACE AN ORDER</a>
+					</div>
+				</div>
+				<div class="slide" id="slide3">
+					<div class="hundo">
+						<h1 id="cuisine_slide">Enjoy the Tastes of Nepal at Your Event</h1>
+						<img src="img/graphics/flags.png" /><br/>
+						<a href="#contact" id="order">PLACE AN ORDER</a>
+					</div>
+				</div>
+				<div class="slide" id="slide4">
+					<div class="hundo">
+						<img src="img/graphics/khajalogo.png" id="khaja"/>
+						<h1 id="cuisine_slide">Make It the Good In Your Good Morning</h1>
+						<img src="img/graphics/flags.png" /><br/>
+						<a href="#granola" id="btngran">LEARN MORE</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			<!--===============================
+		============= ABOUT MOMOS ===========
+		===============================-->
+			<div class="section" id="pabout">
+				<div class="sContent">
+					<h1 id="abouthead">About Momo's</h1>
+					<img src="img/graphics/flags.png" />
+					<div class="article">
+						<p class="aboutcontenthead">
+						<img src="img/graphics/yam_portrait.jpg" width="50%"/>
+						YAM GURANG<br/><span class="underhead">Owner/Chef</span>
+						</p>
+						<p class="content">
+							Yam has been cooking Nepali, Western & International foods for over 20 years. Born and raised in Nepal, Yam believes in cooking,
+							eating and serving fresh, home style food using natural, healthy & tasty ingredients. He literally and figuratively caters to the tastes
+							of his customers. 
+						</p>
+						<p class="aboutcontenthead">
+							OUR GOAL
+							<br/><span class="underhead">Inspired by The Coloured Flags of Nepal.</span>
+						</p>
+						<p class="content">
+							In Nepal colourful Buddhist prayer flags are seen throughout the entire country. These flags are symbolic of fire, earth, sun & water.
+							It is said that as the wind blows through the flags blessings will be sent across the land. Like the flags of Nepal, we at Momos hope to
+							spread the same type of blessings through our incredibly tasting and healthy foods. Enjoy and Namaste!
+						</p>
+					</div>
+					
+					<div class="article_right">
+						<p class="aboutcontenthead">
+							<img src="img/graphics/what_are_momos.jpg" width="50%" />
+							WHAT ARE MOMOS?<br/><span class="underhead">Why We Chose That Name For Our Restaurant.</span>
+						</p>
+						<p class="content">
+							Momos (pronounced mo-mos) are meat or vegetable filled dumplings originally from Nepal and Tibet. Ours are completely
+							hand made starting with local flour based casings and are filled with chicken, pork or veggie mix. We serve them with
+							Yam's tomato, coriander and garlic sauce. 
+						</p>
+						<p class="content">
+							Momos are typically steamed but they can be pan fried as well. After trying just one of our renowned Momos, you will understand why
+							they are so popular and why we decided that our restaurant should carry the same name. We have been serving them to delighted
+							customers for over 20 years. We know you will love them as much as we enjoy preparing them for you, our valued patrons!
+						</p>
+					</div>
+					
+					<div class="article">
+						<p class="aboutcontenthead">
+						<img src="img/graphics/market_drawing.jpg" width="50%"/>
+						THE MARKET<br/><span class="underhead">Farmers' & Artisans' Market at the Western Fair</span>
+						</p>
+						<p class="content">
+							We are located in The Farmers' & Artisans' Market in the Western Fair District. The market is an incredible and
+							eceletic group of people, products and services.
+						</p>
+						<p class="content">
+							The Western Fair's Confederation Building was built in 1927 and the current Farmers' and Artisans' Market has been situated within
+							the building since December 2006. It has grown in the number of vendors and customers every year since then. It is continually being
+							rejuvenated with the introduction of new vendors & products. The renewal of the market seems to mirror the renewal of London's Old East
+							Village neighbourhood itself. The vendors, visitors and customers have come together to create a special kind of family within the
+							community and we invite you to experience it.
+						</p>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--===============================
+		============= ORDER MENU ============
+		===============================-->
+			<div class="section" id="pordermenu">
+				<div class="sContent">
+					<h1 id="menuhead">Our Menu</h1>
+					<img src="img/graphics/flags.png" />
+					<p id="menusubhead">We offer a variety of healthy Nepalese food and beverage choices.</p>
+					<p id="menusubheadwhite">All Prices Listed Include Tax</p>
+					
+					<div class="grid_container">
+						<div class="item">
+							<img src="img/graphics/menu/momos.jpg" />
+							<div class="item_content">
+								<h2>NAPALESE MOMOS</h2>
+								<p class="desc">
+									Nepalese Dumplings filled with chicken, pork or veggie mix served with Yam's tomato,
+									coriander and garlic sauce
+								</p>
+								<p class="price"><sup class="smaller">$</sup>8<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/chicken_curry.jpg" />
+							<div class="item_content">
+								<h2>CHICKEN CURRY</h2>
+								<p class="desc">
+									Chicken Curry made with cumin, tumeric, garlic, ginger, chili. Served with rice.
+									<br/><br/>
+								</p>
+								<p class="price"><sup class="smaller">$</sup>9<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/goat_curry.jpg" />
+							<div class="item_content">
+								<h2>GOAT CURRY</h2>
+								<p class="desc"><!--ERROR : DESCRIPTION-->
+									Chicken Curry made with cumin, tumeric, garlic, ginger, chili. Served with rice.
+									<br/><br/>
+								</p>
+								<p class="price"><sup class="smaller">$</sup>10<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/veggy curry.jpg" />
+							<div class="item_content">
+								<h2>VEGETARIAN CURRY</h2>
+								<p class="desc">
+									Rice, Veggies, beans and another incredible sauce.
+									<br/><br/>
+								</p>
+								<p class="price"><sup class="smaller">$</sup>9<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/yams noodles.jpg" />
+							<div class="item_content">
+								<h2>YAM'S CHICKEN & NOODLES</h2>
+								<p class="desc">
+									Chicken, a tasty sauce and thinly sliced vegetables,
+									Served with bean sprouts on rice noodles.
+								</p>
+								<p class="price"><sup class="smaller">$</sup>9<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/please inform us.jpg" />
+							<div class="item_content">
+								<h2>LET US KNOW...<span id="informus">If you have any alergies or intolerances before you place your order. </span></h2>
+								<p class="informdesc">
+									If you would like something that you don't see on our menu please don't hesitate to contact us. We will
+									do our best to meet your needs and wishes.
+								</p>
+								<a href="#contact" class="inform">CONTACT US</a>
+							</div>
+						</div>
+					</div>
+					
+					<!--=====COMBOS=====-->
+					
+					<h1 id="menuhead">Combo Plates</h1>
+					<img src="img/graphics/flags.png" />
+					<p id="menusubhead">Our customer's favourite combinations</p>
+					
+					<div class="grid_container">
+						<div class="item">
+							<img src="img/graphics/menu/chicken and veggy curry combo.jpg" />
+							<div class="item_content">
+								<h2>CHICKEN & VEGETABLE CURRY COMBO</h2>
+								<p class="desc">
+								Combine the Chicken and the Vegetable Curry.
+								</p>
+								<p class="price"><sup class="smaller">$</sup>10<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/curry and momos combo.jpg" />
+							<div class="item_content">
+								<h2>CURRY & MOMOS COMBO<br/><br/></h2>
+								<p class="desc">
+								Choose either veg or chicken curry and 4 Momos.
+								</p>
+								<p class="price"><sup class="smaller">$</sup>10<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img src="img/graphics/menu/noodles and momos combo.jpg" />
+							<div class="item_content">
+								<h2>CHICKEN NOODLES & MOMOS COMBO</h2>
+								<p class="desc">
+								Enjoy the tasty chicken noodles and 4 Momos
+								</p>
+								<p class="price"><sup class="smaller">$</sup>10<sup>.<span class="smaller">00</span></sup></p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+						</div>
+						
+					</div>
+					
+					<!--=====DRINKS=====-->
+						<h1 id="menuhead">Yam's Drinks</h1>
+						<img src="img/graphics/flags.png" />
+						<p id="menusubhead">Homemade beverages with a Nepali Flair.</p>
+						
+						<div class="grid_container">
+							<div class="item">
+								<img src="img/graphics/menu/Tea.jpg" />
+								<div class="item_content">
+									<h2>NEPALI TEA</h2>
+									<p class="desc">
+										Nepalese Tea Leaves. With milk, sugar and spiced with cardamom, cloves, cinnamon, ginger, peppercorn and bay leaves
+									</p>
+									<p class="price">
+										<sup class="smaller">$</sup>2<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+										<sup class="smaller">$</sup>3<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+									</p>
+									<a href="#contact" class="ordernow">ORDER NOW</a>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/graphics/menu/lemonade.jpg" />
+								<div class="item_content">
+									<h2>YAM-MADE LEMONADE</h2>
+									<p class="desc">
+										Fresh Squeezed Lemonade With Either: Watermelon, Ginger, Strawberries or Cherries....Your Choice !
+										<br/><br/>
+									</p>
+									<p class="price">
+										<sup class="smaller">$</sup>3<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+									</p>
+									<a href="#contact" class="ordernow">ORDER NOW</a>
+								</div>
+							</div>
+							
+							<div class="item">
+								<img src="img/graphics/menu/Smoothie.jpg" />
+								<div class="item_content">
+									<h2>FRESH FRUIT SMOOTHIE</h2>
+									<p class="desc">
+										Choose from our freshest Ingredients Like: Bananas, Papaya, Strawberries, Pineapple,Citrus....Your Choice !
+										<br/><br/>
+									</p>
+									<p class="price">
+										<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+										<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+									</p>
+									<a href="#contact" class="ordernow">ORDER NOW</a>
+								</div>
+							</div>
+						</div>
+						
+						<h1 id="menuhead">Rejuvinating Juices</h1>
+						<img src="img/graphics/flags.png" />
+						<p id="menusubhead">Feel good knowing that what tastes great will also improve your health.</p>
+					
+						<div class="grid_container">
+							<div class="jitem">
+								<img src="img/graphics/menu/apple carrot juice.jpg" />
+							</div>
+							
+							<div class="jitem">
+								<img src="img/graphics/menu/beet juice.jpg" />
+							</div>
+							
+							<div class="jitem">
+								<img src="img/graphics/menu/green juice.jpg" />
+							</div>
+							
+						</div>
+						<p id="feelgood">Choose from our list of fresh made juices.</p>
+						<button id="juicesbtn" onClick="showJuices()">JUICE LIST</button>
+						
+						<div class="grid_container hidden" id="juice_container">
+							<div class="juice_item">
+								<h1>BERRY RED JUICE</h1>
+								<p class="juice_content">
+									1/4 watermelon<br/>
+									1/2 cantaloupe<br/>
+									6-12 strawberries<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Melons</span> are diuretic, cleansing bladder & Kidneys.
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Strawberries</span> have a natural pain killer and flush out aches from over-exertion.
+								</p>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>BRIGHT BEET - APPLE</h1>
+								<p class="juice_content">
+									2 apples<br/>
+									1/4 beet<br/>
+									1/2 lemon<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Lemons</span> stimulate the livers production of enzymes.
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Beets</span> are one of the best liver cleansers known.
+								</p>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>APPLE CARROT</h1>
+								<p class="juice_content">
+									1 apples<br/>
+									5-6 carrots<br/>
+									1/2 lemon<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Apples & Carrots</span>regulate digestion & elimination as well as reduce cholesterol.
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Apples</span> also enhance mineral.<br/><br/>
+								</p>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							
+							<!--====ROW 2====-->
+							<div class="juice_item">
+								<h1>PINEAPPLE DRINK</h1>
+								<p class="juice_content">
+									1/2 pineapple<br/>
+									1/2 cup cilantro<br/>
+									3 Green leaf lettuce leaves<br/>
+									1 lime<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Pineapples</span> have a digestive enzyme helpful in reducing swelling from an injury.<br/>
+								</p><br/>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>PINKY GREEN POWER DRINK</h1>
+								<p class="juice_content">
+									4-6 carrots<br/>
+									2 Romaine lettuce leaves<br/>
+									1 beet, 2 celery stalks<br/>
+									1/4 cup cilantro<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Cilantro & Lettuce</span> have vitamin A & chlorophyll which nourish hair & skin.
+								</p><br/>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>FROM THE GARDEN</h1>
+								<p class="juice_content">
+									4-6 carrots<br/>
+									1 beet<br/>
+									2 celery stalks<br/>
+									1 small cucumber<br/><br/>
+								</p>
+								<p class="juice_content">
+									This juice has it all...<span class="juice_ib">Celery</span> calms the nerves,
+									<span class="juice_ib">Alkaline minerals</span> for bones & teeth &
+									<span class="juice_ib">Beets</span> build the blood.
+								</p>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>BOWEL BUDDY JUICE</h1>
+								<p class="juice_content">
+									1 apple<br/>
+									6 carrots<br/>
+									2 slices of purple cabbage<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Apples</span> help digest cabbage juice, both aiding bowel health.
+								</p><br/>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>LEAVE THE TOXINS BEHIND</h1>
+								<p class="juice_content">
+									1 pear<br/>
+									2 apples<br/>
+									4 oranges<br/>
+									1 grapefruit
+								</p>
+								<p class="juice_content">
+									Substituting powerful <span class="juice_ib">Vitamins & Minerals</span> will help leave coffee behind. - if you want.
+								</p><br/>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>M'PAUSE TONIC</h1>
+								<p class="juice_content">
+									4-6 carrots<br/>
+									1 beet<br/>
+									2 celery stalks<br/>
+									1 small cucumber
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Energizing & balancing. Celery</span> helps to curb cravings for sweets & calms the nerves all
+									because of alkaline minerals.
+								</p>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>WHEATGRASS CHASER</h1>
+								<p class="juice_content">
+									1 handful of wheatgrass<br/>
+									8 carrots<br/>
+									1 lemon<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Wheatgrass</span> protects the lungs & blood from the effects of pollution.
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Lemons</span> add a twist and<br/>
+									<span class="juice_ib">Carrots</span> are for digestion
+								</p>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							
+							<div class="juice_item">
+								<h1>SWEET, GREEN & SALTY</h1>
+								<p class="juice_content">
+									1 handful of wheatgrass<br/>
+									1/2 pineapple<br/>
+									2 celery stalks<br/><br/>
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Wheatgrass</span> has anti-aging properties from Vitamins A, B, C & E,
+									chlorophyll plus minerals and trace elements.
+								</p><br/>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+							<div class="juice_item">
+								<h1>BLOOD CLEANSER</h1>
+								<p class="juice_content">
+									1 cup of wheatgrass<br/>
+									4-6 carrots, 1 beet<br/>
+									1/2 cup Italian parsley<br/>
+									2 celery stalks
+								</p>
+								<p class="juice_content">
+									<span class="juice_ib">Wheatgrass</span> provides a full body workout - good for the blood cells, bones, glands,
+									kidneys, liver, muscles, spleen and teeth.
+								</p><br/>
+								<p class="price">
+									<sup class="smaller">$</sup>4<sup>.<span class="smaller">00</span></sup><sub class="smaller">12 oz</sub>
+									<sup class="smaller">$</sup>5<sup>.<span class="smaller">00</span></sup><sub class="smaller">16 oz</sub>
+								</p>
+								<a href="#contact" class="ordernow">ORDER NOW</a>
+							</div>
+							
+						</div>
+				</div>
+			</div>
+			
+			<!--CATERING-->
+			<div class="section" id="pcatering">
+				<div class="sContent">
+					<h1 id="cateringhead">Catering</h1>
+					<img src="img/graphics/flags.png" />
+					<div class="article cateringarticle">
+						<p class="content">
+							<img src="img/graphics/catering.jpg" width="50%" />
+							Take advantage of our catering services and serve the same wholesome and fresh food at home, the office or social event.
+							Whether it's an anniversary party for 75 in a hall or an intimate dinner for 2 at a bed and breakfast, Momos will make your
+							occasion a memorable one.
+						</p>
+						<p class="content">
+							If you would like an event catered by Momos at the Market just contact us. We will personalize your catering request, work within
+							your price range, cater to your vision and create an incredible food event. We look forward to working with you and providing delicious
+							fresh food for your family, friends or business associates.
+						</p><br/>
+						<p class="contact_warn">Please contact us if you have any questions about our catering services.</p>
+						<a href="#contact" id="catercontact">CONTACT US</a>
+					</div><br/>
+					<p id="choosecatering">Choose from our lists of catering options.</p>
+				</div>
+			</div>
+			<div class="section" id="pgranola">Section 5</div>
+			<div class="section" id="previews">Section 6</div>
+			<div class="section" id="pcontact">Section 7</div>
+		</div>
+		
+		
+		
+	</body>
+</html>
