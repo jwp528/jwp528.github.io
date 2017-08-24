@@ -5,7 +5,7 @@ $(document).ready(function(){
 function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
+    if ((new Date().getTime() - start) >= milliseconds){
       break;
     }
   }
@@ -62,17 +62,22 @@ function bingo_start() {
   elements = shuffle(elements);
 
   $(".cell").each(function(){
-    $(this).text(elements.shift());
+    $(this).html("<p class='lower'>" + elements.shift() + "</p>");
   });
+
+  $("#r3").addClass("selected");
 }
 
 function clear_board() {
   $(".cell").each(function(){
-    if ($(this).hasClass("selected")) {
-      $(this).removeClass("selected");
-    }
+    $(this).removeClass("sauron");
+    $(this).removeClass("black");
+    $(this).removeClass("disabled");
+    $(this).removeClass("selected");
+    $(".reset").removeClass("disabled");
+    $("#r3").removeClass("white");
   });
-}
+}//end clear_board()
 
 function evaluateRow() {
   if ($("#g1").hasClass("selected") && $("#a1").hasClass("selected") && $("#r1").hasClass("selected") && $("#t1").hasClass("selected") && $("#h1").hasClass("selected")){
@@ -175,3 +180,43 @@ function evaluateDiagonal(){
     bingo_start();
   }//end if
 }
+
+function evaluateSauron(){
+  if($("#g3").hasClass("selected") && 
+      $("#a2").hasClass("selected") && $("#a4").hasClass("selected") && 
+      $("#r1").hasClass("selected") && $("#r3").hasClass("selected") && $("#r5").hasClass("selected") &&
+      $("#t2").hasClass("selected") && $("#t4").hasClass("selected") && 
+      $("#h3").hasClass("selected")  
+    ){
+    var check = [
+        "g3", "a2", "a4", "r1", "r3", "r5", "t2", "t4", "h3"
+    ];
+
+    alert("THE EYE SEES ALL!");
+
+    $(".cell").each(function(){
+        $(this).removeClass("selected");
+        $(this).removeClass("newsbg");
+    });
+
+    $(".cell").each(function(){
+        if(check.includes($(this).attr("id"))){
+            $(this).addClass("sauron");
+        }else{
+          $(this).addClass("black");
+        }//end if else
+
+        $("#r3").addClass("white");
+        $(this).addClass("disabled");
+    });
+    $(".reset").addClass("disabled");
+    var myAudio = document.getElementById("the_eye");
+    myAudio.play();
+
+    myAudio.addEventListener("ended", function(){
+       myAudio.currentTime = 0;
+       clear_board();
+       bingo_start();
+    });
+  }//end if
+}//end sauron

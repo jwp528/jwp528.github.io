@@ -24,17 +24,22 @@
     text-shadow: 2px 2px 5px #000;
 }
 
+.lower{
+  margin-top:25%;
+}
+
 
         #bingo_table{
            -webkit-touch-callout: none;
            -webkit-user-select: none;
-           -khtml-user-select: none;
+           -html-user-select: none;
            -moz-user-select: none;
            -ms-user-select: none;
            user-select: none;
            width:100%;
            margin: 0px auto;
-           padding:0;
+           padding:0px;
+           margin-left:60px;
         }
 
         .header img{
@@ -54,27 +59,25 @@
             height: 100px;
             background-color: #BBB;
             margin: .5%;
-            border: 5px solid #BBB;
+            box-shadow:1px 1px 5px #000;
             border-radius: 10px;
-            -webkit-transition: background-color 0.2s ease-in-out;
-            -moz-transition: background-color 0.2s ease-in-out;
-            -o-transition: background-color 0.2s ease-in-out;
-            transition: background-color 0.2s ease-in-out;
-            -webkit-transition: border 0.2s ease-in-out;
-            -moz-transition: border 0.2s ease-in-out;
-            -o-transition: border 0.2s ease-in-out;
-            transition: border 0.2s ease-in-out;
-        }.news{
-          background-color:#84ff00;
+            transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            
+        }.newsbg{
+          background:#84ff00;
           border: 5px solid #08cf00;
         }
 
             .cell:hover {
                 border: 5px solid #08cf00;
+                background:#84ff00;
             }
 
         .selected {
-            background-color: #84ff00;
+            background: #84ff00;
             border: 5px solid #08cf00;
         }
 
@@ -85,7 +88,7 @@
         .heading{
            text-align: center;
            width:17.5%;
-           color:#000;
+           color:#FFF;
         }
 
         .heading h1{
@@ -97,7 +100,7 @@
            bottom:0;
            margin:0;
            padding:0;
-          color:#000;
+          color:#FFF;
         }
 
         .colhead h1{
@@ -114,4 +117,51 @@
   body{
     overflow-x:scroll;
   }
+}
+
+
+/**
+ * UPDATES
+ *
+ * -august 23rd 2017
+ *
+ * -added reset button to clear the board
+ */
+.suckit{
+  width:100%;
+  margin:0 auto;
+}
+.reset{
+  width:inherit;
+  padding:10px;
+  margin:50px auto;
+  font-size:56px;
+  background:#FFF;
+  border:solid 1px #333;
+  color:#333;
+}.reset:hover{
+  background:#CCC;
+  border:solid 1px #000;
+  color:#FFF;
+}
+
+.sauron{
+  background:#F00 !important;
+  color:#FFF;
+  border:none;
+}
+
+.white{
+  background:#FFF;
+  color:#000;
+  border:none;
+}
+
+.black{
+  background:#000;
+}
+
+
+.disabled{
+  pointer-events: none;
 }
